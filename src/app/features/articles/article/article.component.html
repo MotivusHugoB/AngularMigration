@@ -1,0 +1,131 @@
+<div class="article-page">
+  <div class="banner">
+    <div class="container">
+      <h1>{{ article.title }}</h1>
+
+      <app-article-meta [article]="article">
+        <span [hidden]="!currentUser">
+          <a class="btn btn-sm btn-outline-secondary" 
+             [routerLink]="['/editor', article.slug]">
+            <i class="ion-edit"></i> Edit Article
+          </a>
+
+          <button class="btn btn-sm btn-outline-danger"
+                  (click)="deleteArticle()"
+                  [disabled]="isDeleting">
+            <i class="ion-trash-a"></i> Delete Article
+          </button>
+        </span>
+
+        <span [hidden]="currentUser">
+          <app-follow-button
+            [profile]="article.author"
+            [hidden]="currentUser?.username === article.author.username">
+          </app-follow-button>
+
+          <app-favorite-button
+            [article]="article"
+            [hidden]="currentUser?.username === article.author.username">
+            {{ article.favorited ? 'Unfavorite' : 'Favorite' }} Article <span class="counter">({{ article.favoritesCount }})</span>
+          </app-favorite-button>
+        </span>
+      </app-article-meta>
+    </div>
+  </div>
+
+  <div class="container page">
+    <div class="row article-content">
+      <div class="col-md-12">
+        <div [innerHTML]="article.body"></div>
+
+        <ul class="tag-list">
+          <li class="tag-default tag-pill tag-outline" *ngFor="let tag of article.tagList">
+            {{ tag }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="article-actions">
+      <app-article-meta [article]="article">
+        <span [hidden]="!currentUser">
+          <a class="btn btn-sm btn-outline-secondary" 
+             [routerLink]="['/editor', article.slug]">
+            <i class="ion-edit"></i> Edit Article
+          </a>
+
+          <button class="btn btn-sm btn-outline-danger"
+                  (click)="deleteArticle()"
+                  [disabled]="isDeleting">
+            <i class="ion-trash-a"></i> Delete Article
+          </button>
+        </span>
+
+        <span [hidden]="currentUser">
+          <app-follow-button
+            [profile]="article.author"
+            [hidden]="currentUser?.username === article.author.username">
+          </app-follow-button>
+
+          <app-favorite-button
+            [article]="article"
+            [hidden]="currentUser?.username === article.author.username">
+            {{ article.favorited ? 'Unfavorite' : 'Favorite' }} Article <span class="counter">({{ article.favoritesCount }})</span>
+          </app-favorite-button>
+        </span>
+      </app-article-meta>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-8 offset-md-2">
+        <div *ngIf="currentUser">
+          <form class="card comment-form" (ngSubmit)="addComment()" [formGroup]="commentForm">
+            <div class="card-block">
+              <textarea class="form-control" 
+                        placeholder="Write a comment..." 
+                        rows="3"
+                        formControlName="body">
+              </textarea>
+            </div>
+            <div class="card-footer">
+              <img [src]="currentUser.image" class="comment-author-img" />
+              <button class="btn btn-sm btn-primary" type="submit"
+                      [disabled]="commentForm.invalid || commentForm.get('isSubmitting').value">
+                Post Comment
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div *ngIf="!currentUser">
+          <a [routerLink]="['/login']">Sign in</a> or <a [routerLink]="['/register']">sign up</a> to add comments on this article.
+        </div>
+
+        <app-list-errors [errors]="commentForm.get('errors').value"></app-list-errors>
+
+        <div class="card" *ngFor="let comment of comments; let i = index">
+          <div class="card-block">
+            <p class="card-text">{{ comment.body }}</p>
+          </div>
+          <div class="card-footer">
+            <a [routerLink]="['/profile', comment.author.username]" class="comment-author">
+              <img [src]="comment.author.image" class="comment-author-img" />
+            </a>
+            &nbsp;
+            <a [routerLink]="['/profile', comment.author.username]" class="comment-author">
+              {{ comment.author.username }}
+            </a>
+            <span class="date-posted">
+              {{ comment.createdAt | date: 'longDate' }}
+            </span>
+            <span class="mod-options" *ngIf="currentUser?.username === comment.author.username">
+              <i class="ion-trash-a" (click)="deleteComment(comment.id, i)"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

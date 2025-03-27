@@ -1,0 +1,47 @@
+/* 
+ * This file contains the styles for the article-list component.
+ * In Angular, component styles are typically in separate .scss files.
+ * This file was migrated from the AngularJS article-list component.
+ */
+
+.article-preview {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 0;
+
+  &:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+}
+
+.article-meta {
+  margin: 0 0 1rem;
+  display: flex;
+  align-items: center;
+  
+  .info {
+    margin: 0 1.5rem 0 0.3rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+  
+  img {
+    width: 32px;
+    height: 32px;
+    border-radius: 30px;
+  }
+}
+
+.article-list-pagination {
+  margin-top: 20px;
+}
+
+.article-list-empty {
+  padding: 1.5rem 0;
+}
+
+.article-list-loading {
+  padding: 1.5rem 0;
+  text-align: center;
+}

@@ -1,0 +1,78 @@
+// Profile component styles
+:host {
+  display: block;
+}
+
+.user-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  margin-bottom: 1rem;
+}
+
+.user-info {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.action-btn {
+  float: right;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  margin-top: 0;
+  
+  &.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+  }
+  
+  &.btn-outline-secondary {
+    color: #6c757d;
+    background-color: transparent;
+    background-image: none;
+    border-color: #6c757d;
+    
+    &:hover {
+      color: #fff;
+      background-color: #6c757d;
+      border-color: #6c757d;
+    }
+  }
+}
+
+.articles-toggle {
+  margin-bottom: 1.5rem;
+  
+  .nav-link {
+    color: #aaa;
+    
+    &.active {
+      color: #555;
+      border-bottom: 2px solid #5cb85c;
+    }
+    
+    &:hover {
+      color: #555;
+    }
+  }
+}
+
+.profile-page {
+  .user-info {
+    padding: 2rem 0 1rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+.follow-btn {
+  margin-right: 0.5rem;
+}
+
+.edit-profile-btn {
+  margin-right: 0.5rem;
+}

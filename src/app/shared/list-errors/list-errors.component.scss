@@ -1,0 +1,17 @@
+/* 
+ * This file contains the styles for the list-errors component.
+ * In Angular, component styles are typically placed in separate .scss files.
+ * The original AngularJS component didn't have specific styles, so this file
+ * is created to maintain the Angular component structure but is currently empty.
+ * 
+ * Styles can be added here as needed for the list-errors component.
+ */
+
+.error-messages {
+  color: #b85c5c;
+  font-weight: bold;
+}
+
+.error-messages li {
+  margin-bottom: 5px;
+}

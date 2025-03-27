@@ -1,0 +1,53 @@
+/* 
+ * This is the SCSS file for the list-pagination component.
+ * It contains styles for the pagination controls.
+ */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  
+  .page-item {
+    margin: 0 0.2rem;
+    
+    .page-link {
+      color: #5CB85C;
+      cursor: pointer;
+      display: inline-block;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.2rem;
+      border: 1px solid #ddd;
+      
+      &:hover {
+        background-color: #eceeef;
+        text-decoration: none;
+      }
+    }
+    
+    &.active {
+      .page-link {
+        background-color: #5CB85C;
+        border-color: #5CB85C;
+        color: white;
+        
+        &:hover {
+          background-color: #5CB85C;
+          color: white;
+        }
+      }
+    }
+    
+    &.disabled {
+      .page-link {
+        color: #ccc;
+        cursor: not-allowed;
+        
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}

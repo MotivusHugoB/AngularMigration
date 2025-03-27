@@ -1,0 +1,53 @@
+<div class="profile-page">
+  <div class="user-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-10 offset-md-1">
+          <img [src]="profile.image" class="user-img" alt="Profile image" />
+          <h4>{{ profile.username }}</h4>
+          <p>{{ profile.bio }}</p>
+
+          <a class="btn btn-sm btn-outline-secondary action-btn" 
+             [routerLink]="['/settings']" 
+             *ngIf="isUser">
+            <i class="ion-gear-a"></i> Edit Profile Settings
+          </a>
+
+          <app-follow-button 
+            *ngIf="!isUser" 
+            [profile]="profile" 
+            (toggle)="profile.following = !profile.following">
+          </app-follow-button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-10 offset-md-1">
+        <div class="articles-toggle">
+          <ul class="nav nav-pills outline-active">
+            <li class="nav-item">
+              <a class="nav-link" 
+                 routerLinkActive="active" 
+                 [routerLink]="['/profile', profile.username]" 
+                 [routerLinkActiveOptions]="{exact: true}">
+                My Articles
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" 
+                 routerLinkActive="active" 
+                 [routerLink]="['/profile', profile.username, 'favorites']">
+                Favorited Articles
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

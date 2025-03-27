@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-block">
+    <p class="card-text">
+      {{ data.body }}
+    </p>
+  </div>
+  <div class="card-footer">
+    <a [routerLink]="['/profile', data.author.username]" class="comment-author">
+      <img [src]="data.author.image" class="comment-author-img" />
+    </a>
+    &nbsp;
+    <a [routerLink]="['/profile', data.author.username]" class="comment-author">
+      {{ data.author.username }}
+    </a>
+    <span class="date-posted">
+      {{ data.createdAt | date: 'longDate' }}
+    </span>
+    <span class="mod-options" *ngIf="canModify">
+      <i class="ion-trash-a" (click)="deleteCb()"></i>
+    </span>
+  </div>
+</div>

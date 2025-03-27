@@ -1,0 +1,122 @@
+/* Article Component Styles */
+
+:host {
+  display: block;
+}
+
+.article-page {
+  margin-top: 1.5rem;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.article-content {
+  margin-bottom: 2rem;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag-default {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.6rem;
+  background-color: #f3f3f3;
+  border-radius: 10rem;
+}
+
+.article-actions {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+.comment-form {
+  margin-bottom: 2rem;
+}
+
+.card {
+  margin-bottom: 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-block {
+  padding: 1.25rem;
+}
+
+.card-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 0.75rem 1.25rem;
+  background-color: #f7f7f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-author-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  margin-right: 0.5rem;
+}
+
+.comment-body {
+  margin-bottom: 1rem;
+}
+
+.delete-button {
+  color: #b85c5c;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  
+  &:hover {
+    color: #973636;
+  }
+}
+
+.comment-textarea {
+  resize: none;
+  width: 100%;
+  min-height: 100px;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.btn-submit-comment {
+  float: right;
+  margin-top: 0.5rem;
+}
+
+.article-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 30px;
+  margin-right: 0.5rem;
+}
+
+.info {
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.author {
+  font-weight: 500;
+}
+
+.date {
+  color: #bbb;
+  font-size: 0.8rem;
+}
