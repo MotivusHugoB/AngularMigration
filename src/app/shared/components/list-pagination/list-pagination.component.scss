@@ -1,0 +1,51 @@
+/* 
+  This file contains the styles for the list-pagination component.
+  In Angular, component styles are typically placed in a separate .scss file.
+  The original AngularJS component didn't have dedicated styles, so we're creating
+  appropriate styles for the pagination component following Angular best practices.
+*/
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  justify-content: center;
+
+  .page-item {
+    margin: 0 0.25rem;
+
+    .page-link {
+      display: inline-block;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.25rem;
+      color: #5cb85c;
+      background-color: transparent;
+      border: 1px solid #ddd;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: #eceeef;
+        border-color: #ddd;
+      }
+    }
+
+    &.active {
+      .page-link {
+        background-color: #5cb85c;
+        border-color: #5cb85c;
+        color: white;
+        cursor: default;
+      }
+    }
+
+    &.disabled {
+      .page-link {
+        color: #868e96;
+        cursor: not-allowed;
+        background-color: #fff;
+      }
+    }
+  }
+}

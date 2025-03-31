@@ -1,0 +1,35 @@
+/* 
+  This file contains styles for the article-meta component.
+  In Angular, component styles are typically placed in separate .scss files.
+  The original AngularJS component didn't have specific styles defined in the JS file,
+  so this file is created to maintain the component-based architecture in Angular.
+  
+  Any styles specific to the article-meta component should be placed here.
+  These styles will be automatically scoped to the component due to Angular's
+  view encapsulation.
+*/
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  
+  .info {
+    margin-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    
+    .author {
+      font-weight: 500;
+    }
+    
+    .date {
+      color: #bbb;
+      font-size: 0.8rem;
+    }
+  }
+  
+  .article-actions {
+    margin-left: auto;
+  }
+}

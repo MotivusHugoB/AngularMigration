@@ -1,0 +1,12 @@
+<button
+  class="btn btn-sm"
+  [ngClass]="{
+    'btn-outline-primary': !user.following,
+    'btn-primary': user.following
+  }"
+  (click)="submit()"
+  [disabled]="isSubmitting">
+  <i class="ion-plus-round" *ngIf="!user.following"></i>
+  &nbsp;
+  {{ user.following ? 'Unfollow' : 'Follow' }} {{ user.username }}
+</button>

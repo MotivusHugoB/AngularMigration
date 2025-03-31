@@ -1,0 +1,37 @@
+/* 
+ * Footer component styles
+ * 
+ * This file contains the styles for the footer component that was migrated from AngularJS.
+ * In Angular, component styles are typically placed in separate .scss files and are
+ * automatically scoped to the component through view encapsulation.
+ */
+
+footer {
+  margin-top: 3rem;
+  padding: 1rem 0;
+  background-color: #f3f3f3;
+  border-top: 1px solid #e5e5e5;
+}
+
+.attribution {
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.logo-font {
+  font-family: 'Titillium Web', sans-serif;
+  vertical-align: middle;
+}
+
+.attribution a {
+  color: #4a4a4a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: #3d8b3d;
+    text-decoration: underline;
+  }
+}

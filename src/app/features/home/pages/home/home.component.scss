@@ -1,0 +1,83 @@
+/* 
+  This is the SCSS file for the HomeComponent.
+  In AngularJS, styles were often global or included in the main CSS.
+  In Angular, we use component-specific styles with encapsulation.
+  
+  The original HomeCtrl didn't have specific styles, so we're creating
+  a new SCSS file with basic styling for the home component based on
+  common patterns in Angular applications.
+*/
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.home-page {
+  padding: 1.5rem 0;
+}
+
+.tag-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  li {
+    display: inline-block;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tag-default {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    background-color: #f8f9fa;
+    border-radius: 10rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background-color: #e9ecef;
+    }
+  }
+}
+
+.feed-toggle {
+  margin-bottom: 1rem;
+  
+  .nav-link {
+    cursor: pointer;
+    
+    &.active {
+      font-weight: bold;
+    }
+  }
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+}
+
+.app-name {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar {
+  padding: 0 1rem;
+  
+  .sidebar-title {
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+}
+
+.article-preview {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}

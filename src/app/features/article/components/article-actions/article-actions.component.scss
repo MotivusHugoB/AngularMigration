@@ -1,0 +1,31 @@
+.article-meta {
+  display: block;
+  position: relative;
+  font-weight: 300;
+  
+  .article-actions {
+    text-align: right;
+    
+    .btn {
+      margin-left: 5px;
+      
+      &.btn-sm {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        border-radius: 0.2rem;
+      }
+      
+      &.btn-outline-danger {
+        color: #b85c5c;
+        border-color: #b85c5c;
+        
+        &:hover {
+          color: #fff;
+          background-color: #b85c5c;
+          border-color: #b85c5c;
+        }
+      }
+    }
+  }
+}

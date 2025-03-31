@@ -1,0 +1,75 @@
+<div class="article-page">
+  <div class="banner">
+    <div class="container">
+      <h1>{{ article.title }}</h1>
+
+      <app-article-meta [article]="article">
+        <span [hidden]="!canModify">
+          <a class="btn btn-sm btn-outline-secondary" [routerLink]="['/editor', article.slug]">
+            <i class="ion-edit"></i> Edit Article
+          </a>
+          <button class="btn btn-sm btn-outline-danger" (click)="deleteArticle()">
+            <i class="ion-trash-a"></i> Delete Article
+          </button>
+        </span>
+      </app-article-meta>
+    </div>
+  </div>
+
+  <div class="container page">
+    <div class="row article-content">
+      <div class="col-md-12">
+        <div [innerHTML]="article.body"></div>
+        <ul class="tag-list">
+          <li class="tag-default tag-pill tag-outline" *ngFor="let tag of article.tagList">
+            {{ tag }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="article-actions">
+      <app-article-meta [article]="article">
+        <span [hidden]="!canModify">
+          <a class="btn btn-sm btn-outline-secondary" [routerLink]="['/editor', article.slug]">
+            <i class="ion-edit"></i> Edit Article
+          </a>
+          <button class="btn btn-sm btn-outline-danger" (click)="deleteArticle()">
+            <i class="ion-trash-a"></i> Delete Article
+          </button>
+        </span>
+      </app-article-meta>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-8 offset-md-2">
+        <div *ngIf="currentUser">
+          <form class="card comment-form" (ngSubmit)="addComment()" [formGroup]="commentForm">
+            <div class="card-block">
+              <textarea class="form-control" placeholder="Write a comment..." rows="3" formControlName="body"></textarea>
+            </div>
+            <div class="card-footer">
+              <img [src]="currentUser.image" class="comment-author-img" alt="User profile image" />
+              <button class="btn btn-sm btn-primary" type="submit" [disabled]="commentForm.invalid || commentForm.get('isSubmitting').value">
+                Post Comment
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div *ngIf="!currentUser">
+          <a [routerLink]="['/login']">Sign in</a> or <a [routerLink]="['/register']">sign up</a> to add comments on this article.
+        </div>
+
+        <app-article-comment 
+          *ngFor="let comment of comments; let i = index" 
+          [comment]="comment" 
+          [currentUser]="currentUser" 
+          (deleteComment)="deleteComment(comment.id, i)">
+        </app-article-comment>
+      </div>
+    </div>
+  </div>
+</div>

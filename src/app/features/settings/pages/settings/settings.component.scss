@@ -1,0 +1,58 @@
+/* 
+ * Settings component styles
+ * This file contains the styles for the settings component
+ * Migrated from AngularJS to Angular 12
+ */
+
+// Form styles
+.settings-page {
+  .page-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
+
+  .settings-form {
+    margin-bottom: 2rem;
+  }
+
+  // Profile image preview
+  .user-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+  }
+
+  // Form field spacing
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  // Submit button styling
+  .btn-submit {
+    margin-top: 1rem;
+  }
+
+  // Logout button styling
+  .btn-outline-danger {
+    margin-top: 2rem;
+  }
+
+  // Error message styling
+  .error-messages {
+    color: #b85c5c;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .settings-page {
+    .page-container {
+      padding: 1rem;
+    }
+  }
+}

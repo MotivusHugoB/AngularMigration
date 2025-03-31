@@ -1,0 +1,25 @@
+<div class="article-preview" *ngIf="loading">
+  <div class="article-meta">
+    <div class="info">
+      Loading articles...
+    </div>
+  </div>
+</div>
+
+<div class="article-preview" *ngFor="let article of list">
+  <app-article-preview [article]="article"></app-article-preview>
+</div>
+
+<div class="article-preview" *ngIf="!loading && list.length === 0">
+  No articles are here... yet.
+</div>
+
+<nav [hidden]="!list.length">
+  <ul class="pagination">
+    <li class="page-item" 
+        *ngFor="let pageNumber of [].constructor(listConfig.totalPages); let i = index"
+        [class.active]="listConfig.currentPage === i + 1">
+      <a class="page-link" (click)="setPageTo(i + 1)">{{ i + 1 }}</a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,28 @@
+// This is a static asset migration task
+// The source file is a PNG image that needs to be copied to the Angular assets directory
+// No code conversion is needed for binary files like images
+
+// In Angular CLI projects, static assets like images are stored in the src/assets directory
+// The migration plan indicates that project-logo.png should be moved from the root directory
+// to src/assets/images/project-logo.png
+
+// Steps to complete this migration:
+// 1. Create the directory structure if it doesn't exist:
+//    mkdir -p src/assets/images
+// 
+// 2. Copy the file to the new location:
+//    cp project-logo.png src/assets/images/
+//
+// 3. Update any references to this image in your application:
+//    - In AngularJS, the image might have been referenced as: 
+//      <img src="project-logo.png">
+//    - In Angular, it should be referenced as:
+//      <img src="assets/images/project-logo.png">
+//
+// 4. If using the Angular CLI, make sure the assets array in angular.json includes this path:
+//    "assets": [
+//      "src/favicon.ico",
+//      "src/assets"
+//    ]
+//
+// No TypeScript code conversion is needed for this binary file.

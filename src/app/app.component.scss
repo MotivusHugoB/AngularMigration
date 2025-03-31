@@ -1,0 +1,24 @@
+/* 
+ * This is the main application styling file.
+ * In Angular, component styles are encapsulated by default,
+ * so these styles will only apply to the app component.
+ * 
+ * Global styles should be placed in styles.scss at the root level.
+ */
+
+// Main container styling
+:host {
+  display: block;
+  min-height: 100vh;
+  position: relative;
+}
+
+// Angular doesn't use the same class-based approach as AngularJS for views
+// Instead, we use component-based architecture where each component has its own styles
+// This file can contain styles that apply to the overall app structure
+
+// Any global styles that were previously in the AngularJS app
+// should be moved to the global styles.scss file
+
+// Placeholder for app-level styling that might be needed
+// as the migration progresses

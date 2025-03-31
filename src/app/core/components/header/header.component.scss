@@ -1,0 +1,81 @@
+/* 
+ * This is the SCSS file for the header component
+ * Migrated from AngularJS to Angular 12
+ * The original component was using a templateUrl which would have included
+ * styles in the HTML or in a separate CSS file. This file is created to 
+ * maintain proper component structure in Angular.
+ */
+
+// Variables
+$header-bg: #fff;
+$header-border-color: rgba(0, 0, 0, 0.1);
+$nav-link-color: rgba(0, 0, 0, 0.3);
+$nav-link-active-color: rgba(0, 0, 0, 0.8);
+$nav-link-hover-color: rgba(0, 0, 0, 0.6);
+$brand-color: #5CB85C;
+$brand-hover-color: darken(#5CB85C, 5%);
+
+// Header styles
+.navbar {
+  padding: 0.5rem 1rem;
+  background-color: $header-bg;
+  border-bottom: 1px solid $header-border-color;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: $brand-color;
+  
+  &:hover {
+    color: $brand-hover-color;
+    text-decoration: none;
+  }
+}
+
+.nav-link {
+  color: $nav-link-color;
+  cursor: pointer;
+  padding: 0.5rem 0.7rem;
+  position: relative;
+  
+  &:hover {
+    color: $nav-link-hover-color;
+  }
+  
+  &.active {
+    color: $nav-link-active-color;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0.5rem;
+      right: 0.5rem;
+      height: 2px;
+      background-color: $brand-color;
+    }
+  }
+}
+
+// User menu styles
+.user-pic {
+  height: 26px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+// Responsive adjustments
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    flex-direction: row;
+    
+    .nav-item {
+      padding-right: 0.5rem;
+    }
+  }
+}
